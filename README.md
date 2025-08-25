@@ -64,10 +64,10 @@ npm install
 
 Create a .env file in root:
 
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/taskmanager
-JWT_SECRET=hello
-JWT_EXPIRE= 1hr
+PORT = 5600
+DB_URL = "mongodb+srv://acharyapreet2:6hyuC367dsd4tZ1z@cluster0.okw5q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+JWT_SECRET = 'hello'
+JWT_EXPIRE = '1h'
 
 4. Run server
 npm run dev
@@ -105,5 +105,6 @@ Pull requests are welcome. Please open an issue first to discuss major changes.
 📜 License
 
 MIT License-react-express-same-server-port/)
+
 
 
