@@ -1,91 +1,110 @@
-## React Login and Registration example with JWT and HttpOnly cookie
+📝 Task Manager API
+A simple Task Management API built with Node.js, Express, MongoDB, JWT Authentication.
+It allows users to sign up, log in, and manage their tasks.
 
-Build React JWT Authentication and Authorization example using React Hooks, React Router, Axios and Bootstrap (without Redux):
-- JWT Authentication Flow for User Signup & User Login
-- Project Structure for React Authentication (without Redux) with React Router & Axios
-- Creating React Components with Form Validation using Formik and Yup
-- React Pages for accessing protected Resources (Authorization)
-- Dynamic Navigation Bar in React App
+🚀 Features
 
-For more detail, please visit:
-> [React Login and Registration example with JWT](https://bezkoder.com/react-login-example-jwt-hooks/)
+User Authentication (Signup & Login)
 
-> [React + Redux: Login and Registration example with JWT](https://www.bezkoder.com/redux-toolkit-auth/)
+Passwords hashed using bcrypt
 
-Working with back-end servers:
-> [Spring Boot + H2](https://www.bezkoder.com/spring-boot-security-jwt/)
+JWT-based authentication stored in cookies
 
-> [Spring Boot + MySQL/PostgreSQL](https://www.bezkoder.com/spring-boot-login-example-mysql/)
+Task CRUD operations:
 
-> [Spring Boot + MongoDB](https://www.bezkoder.com/spring-boot-mongodb-login-example/)
+Create Task
 
-> [Node Express + MySQL/PostgreSQL](https://www.bezkoder.com/node-js-express-login-example/)
+Get User’s Tasks
 
-> [Node Express + MongoDB](https://www.bezkoder.com/node-js-express-login-mongodb/)
+Update Task
 
-Fullstack (JWT Authentication & Authorization example):
-> [React + Spring Boot](https://bezkoder.com/spring-boot-react-jwt-auth/)
+Delete Task
 
-> [React + Node.js Express](https://bezkoder.com/react-express-authentication-jwt/)
+MongoDB with Mongoose for database
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🛠 Tech Stack
 
-### Project setup
+Backend: Node.js, Express
 
-In the project directory, you can run:
+Database: MongoDB + Mongoose
 
-```
+Authentication: JWT + bcrypt
+
+Other Libraries:
+
+cookie-parser → handle cookies
+
+body-parser → parse request bodies
+
+dotenv → environment variables
+
+nodemon → dev server auto-restart
+
+📂 Project Structure
+project/
+│── src/
+│   ├── controllers/       # Route handlers
+│   ├── services/          # Business logic (taskService.js, authService.js)
+│   ├── repositories/      # DB queries (task.repo.js, user.repo.js)
+│   ├── models/            # Mongoose models (User, Task)
+│   ├── routes/            # Express routes (authRoutes, taskRoutes)
+│   ├── middlewares/       # Auth middleware (JWT verification)
+│   └── index.js           # App entry point
+│
+├── .env                   # Environment variables (DB_URI, JWT_SECRET, etc.)
+├── package.json
+└── README.md
+
+⚡ Installation
+1. Clone repo
+git clone https://github.com/your-username/task-manager.git
+cd task-manager
+
+2. Install dependencies
 npm install
-# or
-yarn install
-```
-yarn
-or
 
-### Compiles and hot-reloads for development
+3. Setup .env file
 
-```
-npm start
-# or
-yarn start
-```
+Create a .env file in root:
 
-Open [http://localhost:8081](http://localhost:8081) to view it in the browser.
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/taskmanager
+JWT_SECRET=your_secret_key
 
-The page will reload if you make edits.
+4. Run server
+npm run dev
 
-### Related Posts
-> [In-depth Introduction to JWT-JSON Web Token](https://bezkoder.com/jwt-json-web-token/)
+📌 API Endpoints
+Auth Routes
+Method	Endpoint	Description
+POST	/auth/signup	Register new user
+POST	/auth/login	Login user & get token
+Task Routes (Protected)
+Method	Endpoint	Description
+POST	/tasks	Create new task
+GET	/tasks	Get all tasks for user
+GET	/tasks/:id	Get single task
+PUT	/tasks/:id	Update task
+DELETE	/tasks/:id	Delete task
+🔐 Authentication Flow
 
-> [React CRUD example using Hooks](https://bezkoder.com/react-hooks-crud-axios-api/)
+User signs up → password is hashed with bcrypt.
 
-> [React Pagination using Hooks example](https://bezkoder.com/react-pagination-hooks/)
+On login → JWT is generated and stored in cookies.
 
-> [React Hooks File Upload example](https://bezkoder.com/react-hooks-file-upload/)
+Protected routes check JWT before allowing access.
 
-Fullstack with Node.js Express:
-> [React + Node Express + MySQL](https://bezkoder.com/react-node-express-mysql/)
+🧑‍💻 Scripts
 
-> [React + Node Express + PostgreSQL](https://bezkoder.com/react-node-express-postgresql/)
+npm run dev → start with nodemon
 
-> [React + Node Express + MongoDB](https://bezkoder.com/react-node-express-mongodb-mern-stack/)
+npm start → start production server
 
-Fullstack with Spring Boot:
-> [React + Spring Boot + MySQL](https://bezkoder.com/react-spring-boot-crud/)
+🤝 Contribution
 
-> [React + Spring Boot + PostgreSQL](https://bezkoder.com/spring-boot-react-postgresql/)
+Pull requests are welcome. Please open an issue first to discuss major changes.
 
-> [React + Spring Boot + MongoDB](https://bezkoder.com/react-spring-boot-mongodb/)
+📜 License
 
-Fullstack with Django:
-> [React Hooks + Django Rest Framework](https://bezkoder.com/django-react-hooks/)
+MIT License-react-express-same-server-port/)
 
-Serverless:
-> [React Hooks Firebase Realtime Database: CRUD App ](https://bezkoder.com/react-firebase-hooks-crud/)
-
-> [React Hooks Firestore example: CRUD App](https://bezkoder.com/react-hooks-firestore/)
-
-Integration (run back-end & front-end on same server/port)
-> [Integrate React with Spring Boot](https://bezkoder.com/integrate-reactjs-spring-boot/)
-
-> [Integrate React with Node Express](https://bezkoder.com/integrate-react-express-same-server-port/)
