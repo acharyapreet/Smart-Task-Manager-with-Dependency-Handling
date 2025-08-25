@@ -44,32 +44,30 @@ nodemon → dev server auto-restart
 project/
 │── src/
 │   ├── controllers/       # Route handlers
-│   ├── services/          # Business logic (taskService.js, authService.js)
-│   ├── repositories/      # DB queries (task.repo.js, user.repo.js)
+│   ├── services/          # Business logic (taskService.js, authService.js, userService)
+│   ├── repositories/      # DB queries (task.repository.js, user.repository.js)
 │   ├── models/            # Mongoose models (User, Task)
-│   ├── routes/            # Express routes (authRoutes, taskRoutes)
-│   ├── middlewares/       # Auth middleware (JWT verification)
+│   ├── routes/            # Express routes (authRouter, userRouter)
+
 │   └── index.js           # App entry point
 │
 ├── .env                   # Environment variables (DB_URI, JWT_SECRET, etc.)
 ├── package.json
 └── README.md
 
-⚡ Installation
-1. Clone repo
-git clone https://github.com/your-username/task-manager.git
-cd task-manager
 
-2. Install dependencies
+
+1. Install dependencies
 npm install
 
-3. Setup .env file
+2. Setup .env file
 
 Create a .env file in root:
 
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/taskmanager
-JWT_SECRET=your_secret_key
+JWT_SECRET=hello
+JWT_EXPIRE= 1hr
 
 4. Run server
 npm run dev
@@ -107,4 +105,5 @@ Pull requests are welcome. Please open an issue first to discuss major changes.
 📜 License
 
 MIT License-react-express-same-server-port/)
+
 
